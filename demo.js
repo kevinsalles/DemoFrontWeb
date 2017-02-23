@@ -9,8 +9,10 @@ var StickyTab = (function() {
         $thisSticky
           .data('originalPosition', $thisSticky.offset().top)
           .data('originalHeight', $thisSticky.outerHeight())
+          .data('originalWidth',$thisSticky.outerWidth())
           .parent()
-          .height($thisSticky.outerHeight());
+          .height($thisSticky.outerHeight())
+          .width($thisSticky.outerWidth());
       });
       $window.off("scroll.stickies").on("scroll.stickies", function() {
         _whenScrolling();
